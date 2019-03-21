@@ -17,24 +17,24 @@ module.exports = {
         "react"
     ],
     "rules": {
-        "indent": [
-            "error",
-            2
-        ],
-        "linebreak-style": [
-            "error",
-            "unix"
-        ],
-        "quotes": [
-            "error",
-            "single"
-        ],
-        "semi": [
-            "error",
-            "always"
-        ],
+        // "indent": [
+        //     "error",
+        //     2
+        // ],
+        // "linebreak-style": [
+        //     "error",
+        //     "unix"
+        // ],
+        // "quotes": [
+        //     "error",
+        //     "single"
+        // ],
+        // "semi": [
+        //     "error",
+        //     "always"
+        // ],
         "react/jsx-uses-vars": 1,
-        "no-console": 1,
-        "linebreak-style": 0,
+        // "no-console": 0,
+        // "linebreak-style": 0,
     }
 };
