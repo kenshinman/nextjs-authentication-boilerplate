@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import initialize from "../utils/initialize";
 import Layout from "../components/Layout";
 import devLogger from "dev-logger-simple";
-import { Button } from '@material-ui/core'
 
 const Whoami = ({ user }) => {
   devLogger(user)
@@ -23,7 +22,6 @@ const Whoami = ({ user }) => {
           You are not authenticated.
         </h3>
       )}
-      <Button>Hello</Button>
     </Layout>
   );
 };
@@ -48,9 +46,7 @@ Whoami.getInitialProps = async ctx => {
       };
     } catch (error) {
       devLogger(error.response);
-      return {
-        user: { firstName: "Paul" }
-      };
+     
     }
   }
 };

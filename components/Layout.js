@@ -2,7 +2,7 @@
 import Head from "next/head";
 import { connect } from "react-redux";
 import actions from "../redux/actions";
-import { Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Nav, Navbar } from "react-bootstrap";
 
 const Layout = ({ children, title, isAuthenticated, deauthenticate }) => (
   <div>
@@ -12,17 +12,35 @@ const Layout = ({ children, title, isAuthenticated, deauthenticate }) => (
       {(isAuthenticated, deauthenticate)}
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       {/* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css" /> */}
-      <link rel="stylesheet" href="static/css/bootstrap.min.css" />
+      {/* <link rel="stylesheet" href="static/css/bootstrap.min.css" /> */}
+      <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous"
+      />
+      {/* <link rel="stylesheet" href="/static/css/main.css"/> */}
     </Head>
     <div className="">
-      <Navbar bg="dark" variant="dark">
+      <Navbar>
         <Navbar.Brand href="#home">Web App</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/whoami">Profile</Nav.Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+            {!isAuthenticated && <Nav.Link href="/signin">Signin</Nav.Link>}
+            {isAuthenticated && (
+              <Nav.Link
+                onClick={e => {
+                  e.preventDefault();
+                  deauthenticate();
+                }}
+                href="">
+                Signout
+              </Nav.Link>
+            )}
+            {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
                 Another action
@@ -32,21 +50,14 @@ const Layout = ({ children, title, isAuthenticated, deauthenticate }) => (
               <NavDropdown.Item href="#action/3.4">
                 Separated link
               </NavDropdown.Item>
-            </NavDropdown>
+            </NavDropdown> */}
           </Nav>
         </Navbar.Collapse>
       </Navbar>
       ;
-      {/* <ul>
-        <Link href="/"><a>Home</a></Link>
-        {!isAuthenticated && <Link href="/signin"><a>Sign In</a></Link>}
-        {!isAuthenticated && <Link href="/signup"><a>Sign Up</a></Link>}
-        {isAuthenticated && <li onClick={deauthenticate}><a>Sign Out</a></li>}
-        <Link href="/whoami"><a>Who Am I</a></Link>
-      </ul> */}
     </div>
 
-    <div className="has-text-centered">{children}</div>
+    {children}
   </div>
 );
 

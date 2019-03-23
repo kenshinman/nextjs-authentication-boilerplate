@@ -1,15 +1,15 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import actions from '../redux/actions';
-import initialize from '../utils/initialize';
-import Layout from '../components/Layout';
+import React from "react";
+import { connect } from "react-redux";
+import actions from "../redux/actions";
+import initialize from "../utils/initialize";
+import Layout from "../components/Layout";
 
 class Signin extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: '',
-      password: ''
+      email: "",
+      password: ""
     };
   }
 
@@ -21,7 +21,7 @@ class Signin extends React.Component {
     e.preventDefault();
     this.props.login(
       { email: this.state.email, password: this.state.password },
-      'signin'
+      "signin"
     );
   }
 
@@ -32,8 +32,7 @@ class Signin extends React.Component {
         <form
           onSubmit={this.handleSubmit.bind(this)}
           className="container"
-          style={{ width: '540px' }}
-        >
+          style={{ width: "540px" }}>
           <div className="field">
             <p className="control has-icons-left has-icons-right">
               <input
