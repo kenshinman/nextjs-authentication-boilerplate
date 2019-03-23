@@ -1,6 +1,6 @@
 .next/
 node_modules/
-
+config.js
 
 *.log
 .env
