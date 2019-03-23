@@ -45,7 +45,7 @@ Whoami.getInitialProps = async ctx => {
         user
       };
     } catch (error) {
-      devLogger(error.response);
+      devLogger("this is the error=> ",error.response.data);
      
     }
   }

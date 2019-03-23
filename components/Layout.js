@@ -29,6 +29,7 @@ const Layout = ({ children, title, isAuthenticated, deauthenticate }) => (
           <Nav className="mr-auto">
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/whoami">Profile</Nav.Link>
+            <Nav.Link href="/posts">Posts</Nav.Link>
             {!isAuthenticated && <Nav.Link href="/signin">Signin</Nav.Link>}
             {isAuthenticated && (
               <Nav.Link
@@ -54,7 +55,6 @@ const Layout = ({ children, title, isAuthenticated, deauthenticate }) => (
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-      ;
     </div>
 
     {children}

@@ -20,8 +20,10 @@
     "react": "^16.8.0",
     "react-bootstrap": "^1.0.0-beta.6",
     "react-dom": "^16.8.0",
+    "react-helmet": "^5.2.0",
     "react-redux": "^6.0.0",
     "redux": "^4.0.1",
+    "redux-devtools-extension": "^2.13.8",
     "redux-thunk": "^2.3.0"
   },
   "devDependencies": {

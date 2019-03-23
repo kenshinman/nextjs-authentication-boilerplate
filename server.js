@@ -29,6 +29,14 @@ app.prepare()
       }
     });
 
+    server.get('/post/:id', (req, res) => {
+      // console.log("")
+      const actualPage = '/posts/post'; // actual page according to the nextjs page directory
+      const queryParams = {id: req.params.id}
+      console.log("queryParams ", queryParams)
+      app.render(req, res, actualPage, queryParams)
+    })
+
     server.get('*', (req, res) => {
       return handle(req, res);
     });
